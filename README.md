@@ -1,6 +1,7 @@
-# NYPD-TRAFFIC-ACCIDENT--Data-Cleaning
+# NYPD-TRAFFIC-ACCIDENT_2018--Data-Cleaning
+
 # INTRODUCTION
-As a Data Analyst i was given a task to clean the data gathered by New York Police Department concerning Accident occurrences from January- December 2018. Each record represents an individual accident including the Date, Time, Geographical Information (such as: Borough, location, off_street, cross_street and on_street) of the accident, type of vehicle involved, the severity of the accident and the cause of the accident. 
+As a Data Analyst, i was given a task to clean the data gathered by New York Police Department concerning Accident occurrences from January- December 2018. Each record represents an individual accident including the Date, Time, Geographical Information (such as: Borough, location, off_street, cross_street and on_street) of the accident, type of vehicle involved, the severity of the accident and the cause of the accident. 
 -	this data can be used to identify trends in the frequency of accident occurrences in a specific area or even a certain period.
 -	we can identify the patterns in times of the day when accidents most likely occur.
 -	which area has the highest number of accidents leading to death or injury.
@@ -15,24 +16,27 @@ The following task was performed:
 # DATA EXPLORATION
 I started with EDA (Exploratory Data Analysis) process. 
 -	checked if the columns in my dataset is properly formatted
-o	checked if data-items does not contain leading or trailing spaces, 
-o	texts are in lowercase for easy readability
-o	all data-item are spelled well and in better naming conventions for easy interpretations.
+    - checked if data-items does not contain leading or trailing spaces, 
+    - texts are in lowercase for easy readability
+    - all data-item are spelled well and in better naming conventions for easy interpretations.
 -	checked to see if there are no duplicate rows
 -	identified number of unique values against duplicates for each column
 -	checked the data type of each columns to know if data are consistent mainly the date and time columns
 -	check for sum of missing values in each column
 -	filter out some important columns (related to date, time, geographical information, type of vehicle, accident severity and causes of accident)
+
+  
 #  EDA Findings
 -	the columns are properly pre-formatted
 -	a result of zero (0) was returned for duplicate rows in the dataframe. This indicates that there are no duplicate rows in the Dataframe. each row is unique, and there are no identical rows based on all columns. this is a positive outcome as it suggests data integrity and helps ensure accurate analyses without concerns about duplicate entries.
 -	A list concerning distinct rows for each column was returned. the "unique_key" has the highest number of unique values. this column can represent our primary key that will identify all other rows, thereby ensuring data integrity.
 -	From the values returned for missing values. This identified
-o	the columns: unique key, date, time and accident severity (all injured and killed) are highly populated with values. 
-o	the geographic info (borough, location, on_street, off_street and cross_street) display inconsistent data, with only location being the most populated.
-o	the columns related to vehicle 3-5 and cause_vehicle 3-5 shows a large amount of missing values.
+     - the columns: unique key, date, time and accident severity (all injured and killed) are highly populated with values. 
+     - the geographic info (borough, location, on_street, off_street and cross_street) display inconsistent data, with only location being the most populated.
+     - the columns related to vehicle 3-5 and cause_vehicle 3-5 shows a large amount of missing values.
 -	I noticed the location column can be split into more conventional columns of longitude and latitude, which are easier read by visualization and analytical tool.
 -	from the accident severity category, although the pedestrians_injured', 'cyclist_injured', 'motorist_injured' columns, are fully populated, the 'total_injured' column has 1 value missing. same applies to the 'pedestrians_killed','cyclist_killed', 'motorist_killed' columns, with the 'total_killed' missing 5 values. we can asssume the total number of injured and killed respectively is the sum of pedestrians, cysclist and motorist injured and killed respectively.
+
 
 # DATA CLEANING
 -	the date and time datatype were changed from object to datetime to enhance data consistency
